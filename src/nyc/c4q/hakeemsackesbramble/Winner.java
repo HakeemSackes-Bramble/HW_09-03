@@ -10,20 +10,20 @@ public class Winner {
         //isWinner();
     }
     static boolean isWinner(String[] s){
-        boolean win = false;
+        boolean didSomeOneWin = false;
         for(int i = 0; i<3; i++){
-            if (!win) {
+            if (!didSomeOneWin) {
                 boolean winVertical = (s[i].equals(s[i + 3])) && (s[i + 3].equals(s[i + 6]));
                 boolean isEmpty = !(s[i].equals(" "));
-                win = winVertical && isEmpty;
-            }if (!win) {
+                didSomeOneWin = winVertical && isEmpty;
+            }if (!didSomeOneWin) {
                 boolean winHorizontal = (s[(i * 3)].equals(s[(i * 3) + 1])) && (s[(i * 3) + 1].equals(s[(i * 3) + 2]));
-                boolean isEmpty = !(s[i*3].equals(" "));
-                win = winHorizontal && isEmpty;
-            }if (!win) {
+                boolean isitEmpty = !(s[i*3].equals(" "));
+                didSomeOneWin = winHorizontal && isitEmpty;
+            }if (!didSomeOneWin) {
                 boolean winDiagonal = (s[(i)].equals(s[4])) && (s[4].equals(s[8 - i]));
                 boolean isEmpty = !(s[i].equals(" "));
-                win = winDiagonal && isEmpty;
+                didSomeOneWin = winDiagonal && isEmpty;
             }
         }
 /*
@@ -33,6 +33,6 @@ boolean isEmpty = !(s[2].equals(" "));
 win = winDiagonal2 && isEmpty;
 }
 */
-        return win;
+        return didSomeOneWin;
     }
 }
