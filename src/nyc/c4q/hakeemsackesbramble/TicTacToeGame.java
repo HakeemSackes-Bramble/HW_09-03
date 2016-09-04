@@ -5,24 +5,26 @@ import java.util.Scanner;
 /**
  * Created by hakeemsackes-bramble on 8/29/16.
  */
-public class TicTacToe_userPosition {
+public class TicTacToeGame {
     public static void main(String[] args) {
 
-           getTicTacToeWinner();
+           ticTacToegame();
     }
-    static boolean getTicTacToeWinner() {
+    static boolean ticTacToegame() {
         String[] s = {" "," "," "," "," "," "," "," "," "};
         Scanner scan = new Scanner(System.in);
         int turnNumber = 0;
         String[] playerXO = {"X","O"};
 
-        while (!Winner.isWinner(s)) {
+        do {
             //start users turn
             TicTacToe_board.boardDisplay(s);
             int player = 0; //turn to 0 and implement TactfulTickPlayer to play computer
-            System.out.println( "it's your turn, select a number to choose a position");
-            System.out.println("\nTactfulTick: " + TactfulTickDialogue.braggingTick());
-            int position = scan.nextInt();
+            System.out.println("\nTactfulTick: " + TactfulTickDialogue.braggingTick()+ "\n(Remember you are 'X')\n");
+            System.out.print( "\nit's your turn, \nselect a number     |\nto choose a position: ");
+
+            int position = GetUserPosition.getPosition();
+
             if (s[(position - 1)].equals(" ")) {
                 s[(position - 1)] = playerXO[player];
                 turnNumber += 1;
@@ -33,11 +35,11 @@ public class TicTacToe_userPosition {
                 //restart whole cycle
             } else {
                 //if wrong input, output
-                System.out.println("You pea brained giant!! you cant go there!! pick another spot");
+                System.out.println(TactfulTickDialogue.trashTalkerTick() + "\n you cant go there!! pick another spot. \n\n Remember you are X");
 
             }
 
-        }
+        }while (!Winner.isWinner(s) && turnNumber < 9);
 
         TicTacToe_board.boardDisplay(s);
         return Winner.isWinner(s);

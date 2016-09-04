@@ -7,11 +7,11 @@ public class TicTacToe_board {
     public static void main(String[] args){
     }
     //tic tac toe steps:
-    //1 disp boardxxxxxxxxx
-    //prompt user to choosexxxxxxxx
-    //2 take input of positionxxxxx
-    // automate o
-    // check for winner and reiterate if false
+    //1 disp board done
+    //prompt user to choose position done
+    //2 take input of position  done
+    // automate the O player done
+    // check for winner and reiterate if false done
     // if winner is true disp winner and board
 
 
