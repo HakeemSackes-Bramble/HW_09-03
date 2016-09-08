@@ -12,7 +12,7 @@ public class TactfulTickDialogue {
 
     public static String braggingTick() {
         String[] monologue = {
-                "im the greatest person to play the game!!",
+                " the greatest person to play the game!!",
                 "no one has yet too best me!!",
                 "bare witness to my omnipotence!!",
                 "tons have trembled in attempt to take my throne!!",
@@ -20,7 +20,7 @@ public class TactfulTickDialogue {
                 "it's losers move!!",
                 "take in the tactful ticks treachery!!",
                 "your in time to be thrashed by the talented tactful tick!!",
-                "its time to take you to town!!",
+                "its time to take you down!!",
                 "the ticks talent is tremendous!!"
         };
         Random text = new Random();

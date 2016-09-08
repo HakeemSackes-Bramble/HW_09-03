@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	    boolean a = playAgain();
+	    boolean a = true;
         while(a){
             System.out.println("\nTactfulTick: " + TactfulTickDialogue.braggingTick()+"\n");
             TicTacToeGame.ticTacToegame();

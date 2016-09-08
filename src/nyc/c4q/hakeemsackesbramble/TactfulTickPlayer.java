@@ -6,14 +6,11 @@ import java.util.*;
  */
 public class TactfulTickPlayer {
     public static void main(String[] args) {
-        String[] s = {" ", " ", " ", " ", "x", "o", "x", " ", " "};
-        for (int i = 0; i < 25; i++) {
-            int j = i % 5;
-            System.out.println(j);
-        }
+
     }
 
     public static void simplePlayer(String XorO, String[] board) {
+        Random text = new Random();
         TicTacToe_board.boardDisplay(board);
         System.out.println(XorO + " turn");
         ArrayList<Integer> choices = new ArrayList<>();
@@ -55,15 +52,18 @@ public class TactfulTickPlayer {
             for (int i = 0; i < 9; i++) {
                 if (board[i].equals(" ")) {
                     choices.add(i);
+                    int compChoice = text.nextInt(choices.size());
+                    int position = choices.get(compChoice);
+                    board[(position)] = XorO;
+                    return;
                 }
             }
         }
-        if(choices.size() == 0){
-            int position = 0;
-            board[(position)] = XorO;
+        if(choices.size() == 0 && !Winner.isWinner(board)){
+            System.out.println("I tied!!! With you!!! UGH!!");
             return;
         }else {
-            Random text = new Random();
+
             int compChoice = text.nextInt(choices.size());
             int position = choices.get(compChoice);
             board[(position)] = XorO;
