@@ -10,18 +10,18 @@ public class TactfulTickDialogue {
         braggingTick();
     }
 
-    public static String braggingTick() {
+    static String braggingTick() {
         String[] monologue = {
-                " the greatest person to play the game!!",
-                "no one has yet too best me!!",
-                "bare witness to my omnipotence!!",
-                "tons have trembled in attempt to take my throne!!",
+                "I am the greatest person to play the game!!",
+                "No one has yet too best me!!",
+                "Bare witness to my omnipotence!!",
+                "Tons have trembled in attempt to take my throne!!",
                 "I will never be defeated!!",
-                "it's losers move!!",
-                "take in the tactful ticks treachery!!",
-                "your in time to be thrashed by the talented tactful tick!!",
-                "its time to take you down!!",
-                "the ticks talent is tremendous!!"
+                "It's losers move!!",
+                "Take in the tactful ticks treachery!!",
+                "Your in time to be thrashed by the talented tactful tick!!",
+                "Its time to take you down!!",
+                "The ticks talent is tremendous!!"
         };
         Random text = new Random();
         int option = text.nextInt(monologue.length);
@@ -29,15 +29,14 @@ public class TactfulTickDialogue {
     }
 
 
-    public static String trashTalkerTick(){
-        String[] trashTalk ={
+    static String trashTalkerTick(){
+        String[] trashTalk = {
             "I can tell you are going to lose",
             "your really not that good are you?",
             "you know your not making sense.. right??",
             "just pick a number!!",
             "I've seen some very dull tools made of very dense materials, But your head my friend, is a lead ball",
-            "oh my gosh!!! when will I ever find a worthy tic tac toe opponent",
-                ""
+            "oh my gosh!!! when will I ever find a worthy tic tac toe opponent"
         };
 
 

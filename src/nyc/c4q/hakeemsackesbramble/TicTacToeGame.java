@@ -20,8 +20,8 @@ public class TicTacToeGame {
             //start users turn
             TicTacToe_board.boardDisplay(s);
             int player = 0; //turn to 0 and implement TactfulTickPlayer to play computer
-            System.out.println("\nTactfulTick: " + TactfulTickDialogue.braggingTick()+ "\n(Remember you are 'X')\n");
-            System.out.print( "\nit's your turn, \nselect a number     |\nto choose a position: ");
+            System.out.println("\n\nTactfulTick: " + TactfulTickDialogue.braggingTick()+ "\n(Remember you are 'X')\n");
+            System.out.print( "it's your turn, \nselect a number     |\nto choose a position: ");
 
             int position = GetUserPosition.getPosition();
 

@@ -1,10 +1,8 @@
 package nyc.c4q.hakeemsackesbramble;
-import java.awt.*;
-import java.util.*;
-/**
- * Created by hakeemsackes-bramble on 8/30/16.
- */
-public class TactfulTickPlayer {
+import java.util.ArrayList;
+import java.util.Random;
+
+public class TactfulTickPlayerOld {
     public static void main(String[] args) {
 
     }
@@ -19,11 +17,7 @@ public class TactfulTickPlayer {
             int value2 = (i + 6) % 9;
             int value3 = i;
             //boolean almostWinHorizontal =(board[(i)%9].equals(board[(i+1)%9]));
-            if(winchecker(board, value1, value2, value3, "O")){
-                board[(value3)] = XorO;
-                System.out.println("HA HA HA! I am the best!! " + TactfulTickDialogue.braggingTick());
-                return;
-            }else if (winchecker(board, value1, value2, value3, "X")) {
+            if (winchecker(board, value1, value2, value3, "X")) {
                 choices.add(value3);
             }
         }
@@ -32,11 +26,7 @@ public class TactfulTickPlayer {
                 int value1 = ((i * 3) + j);
                 int value2 = (i * 3) + ((j + 1) % 3);
                 int value3 = (i * 3) + ((j + 2) % 3);
-                if(winchecker(board, value1, value2, value3, "O")){
-                    board[(value3)] = XorO;
-                    System.out.println("HA HA HA! I am the best!! " + TactfulTickDialogue.braggingTick());
-                    return;
-                }else if (winchecker(board, value1, value2, value3, "X")) {
+                if (winchecker(board, value1, value2, value3, "X")) {
                     choices.add(value3);
                 }
             }
@@ -46,21 +36,14 @@ public class TactfulTickPlayer {
             int value4 = j;
             int value5 = (j + 4) % 12;
             int value6 = (j + 8) % 12;
-            if(winchecker(board, value4, value5, value6, "O")){  // BIGGEST BUG FIX: comp would block user instead of winning
-                board[(value6)] = XorO;
-                System.out.println("HA HA HA! I am the best!! " + TactfulTickDialogue.braggingTick());
-                return;
-            }else if (winchecker(board, value4, value5, value6, "X")) {
+
+            if (winchecker(board, value4, value5, value6, "X")) {
                 choices.add(value6);
             }
             int value7 = i * 2 + 2;
             int value8 = ((i + 1) % 3) * 2 + 2;
             int value9 = ((i + 2) % 3) * 2 + 2;
-            if(winchecker(board, value7, value8, value9, "O")){
-                board[(value9)] = XorO;
-                System.out.println("HA HA HA! I am the best!! " + TactfulTickDialogue.braggingTick());
-                return;
-            }else if (winchecker(board, value7, value8, value9, "X")) {
+            if (winchecker(board, value7, value8, value9, "X")) {
                 choices.add(value9);
             }
         }
@@ -69,13 +52,12 @@ public class TactfulTickPlayer {
             for (int i = 0; i < 9; i++) {
                 if (board[i].equals(" ")) {
                     choices.add(i);
-
+                    int compChoice = text.nextInt(choices.size());
+                    int position = choices.get(compChoice);
+                    board[(position)] = XorO;
+                    return;
                 }
             }
-            int compChoice = text.nextInt(choices.size());  //kind of a big bug fix: comp wasn't choosing random location
-            int position = choices.get(compChoice);
-            board[(position)] = XorO;
-            return;
         }
         if(choices.size() == 0 && !Winner.isWinner(board)){
             System.out.println("I tied!!! With you!!! UGH!!");
@@ -110,4 +92,3 @@ public class TactfulTickPlayer {
     }
 
 }
-
